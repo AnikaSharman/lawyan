@@ -15,17 +15,7 @@ const Hero: React.FC = () => {
             <div className="absolute top-0 left-0 right-0 h-[600px] bg-gradient-to-b from-blue-50/50 to-transparent -z-10"></div>
 
             <div className="max-w-5xl mx-auto px-6 text-center z-10 mb-16">
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="inline-flex items-center gap-2 px-3 py-1 bg-white border border-black/5 rounded-full shadow-sm mb-8"
-                >
-                    <span className="flex h-2 w-2 relative">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-primary opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-primary"></span>
-                    </span>
-                    <span className="text-xs font-medium text-textMuted">LawYan 2.0 is now live</span>
-                </motion.div>
+
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
