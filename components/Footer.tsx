@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import { Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
     return (
@@ -13,12 +14,12 @@ const Footer: React.FC = () => {
                             <span className="font-sans font-bold text-xl text-textMain">LawYan</span>
                         </Link>
                         <p className="text-textMuted leading-relaxed max-w-sm mb-6">
-                            The intelligent operating system for forward-thinking legal teams. Automate the mundane, focus on the extraordinary.
+                            The intelligent operating system for the future of law. Automating the mundane, empowering the extraordinary.
                         </p>
                         <div className="flex gap-4">
-                            <SocialIcon />
-                            <SocialIcon />
-                            <SocialIcon />
+                            <SocialIcon icon={<Twitter className="w-4 h-4" />} label="Twitter" />
+                            <SocialIcon icon={<Linkedin className="w-4 h-4" />} label="LinkedIn" />
+                            <SocialIcon icon={<Instagram className="w-4 h-4" />} label="Instagram" />
                         </div>
                     </div>
 
@@ -73,9 +74,17 @@ const Footer: React.FC = () => {
     );
 };
 
-const SocialIcon = () => (
-    <div className="w-8 h-8 rounded-full bg-white border border-black/5 flex items-center justify-center text-textMuted hover:text-textMain hover:border-black/20 cursor-pointer transition-all">
-        <div className="w-4 h-4 bg-current rounded-sm opacity-50"></div>
+interface SocialIconProps {
+    icon: ReactNode;
+    label: string;
+}
+
+const SocialIcon: React.FC<SocialIconProps> = ({ icon, label }) => (
+    <div
+        className="w-9 h-9 rounded-full bg-white border border-black/5 flex items-center justify-center text-textMuted hover:text-textMain hover:border-black/20 hover:shadow-sm cursor-pointer transition-all"
+        aria-label={label}
+    >
+        {icon}
     </div>
 )
 
