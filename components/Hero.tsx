@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
                     transition={{ delay: 0.1 }}
                     className="text-6xl md:text-8xl font-serif font-medium text-textMain leading-[0.9] tracking-tight mb-8"
                 >
-                    <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-500">Relationship intelligence</span> <br />
+                    <span className="bg-clip-text text-transparent bg-gradient-to-b from-black to-gray-700">Relationship intelligence</span> <br />
                     <span className="italic text-gray-400">for modern law.</span>
                 </motion.h1>
 
