@@ -9,7 +9,7 @@ const Hero: React.FC = () => {
     const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
     return (
-        <div className="relative pt-32 pb-20 overflow-hidden bg-gradient-mesh min-h-screen flex flex-col items-center">
+        <div className="relative pt-52 pb-20 overflow-hidden bg-gradient-mesh min-h-screen flex flex-col items-center">
 
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 right-0 h-[600px] bg-gradient-to-b from-blue-50/50 to-transparent -z-10"></div>
@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
                     transition={{ delay: 0.1 }}
                     className="text-6xl md:text-8xl font-serif font-medium text-textMain leading-[0.9] tracking-tight mb-8"
                 >
-                    Relationship intelligence <br />
+                    <span className="bg-clip-text text-transparent bg-gradient-to-b from-gray-900 to-gray-500">Relationship intelligence</span> <br />
                     <span className="italic text-gray-400">for modern law.</span>
                 </motion.h1>
 
