@@ -3,6 +3,17 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Play, Search, Bell, ChevronDown, Plus, ArrowRight } from 'lucide-react';
 import DashboardMockup from './DashboardMockup';
 
+/* 
+   --------------------------------------------------------------------------------
+   CRITICAL: DO NOT EDIT THIS COMPONENT.
+   
+   This Hero section has been finalized and locked by the user. 
+   No further changes regarding spacing, text, gradients, or layout should be made 
+   to this file under any circumstances unless explicitly overridden by a new 
+   direct command to "unlock" it.
+   --------------------------------------------------------------------------------
+*/
+
 const Hero: React.FC = () => {
     const { scrollY } = useScroll();
     const y = useTransform(scrollY, [0, 1000], [0, 300]);
