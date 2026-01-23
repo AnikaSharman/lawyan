@@ -25,6 +25,11 @@ const ProductsPage: React.FC = () => {
     );
 };
 
+import FutureOfAIPage from './pages/resources/FutureOfAIPage';
+import GettingStartedPage from './pages/resources/GettingStartedPage';
+import MillerCaseStudyPage from './pages/resources/MillerCaseStudyPage';
+import AIEthicsPage from './pages/resources/AIEthicsPage';
+
 const App: React.FC = () => {
     return (
         <BrowserRouter>
@@ -42,6 +47,10 @@ const App: React.FC = () => {
                     <Route path="/pricing" element={<PricingPage />} />
                     <Route path="/demo" element={<DemoPage />} />
                     <Route path="/resources" element={<ResourcesPage />} />
+                    <Route path="/resources/future-of-ai" element={<FutureOfAIPage />} />
+                    <Route path="/resources/getting-started" element={<GettingStartedPage />} />
+                    <Route path="/resources/case-study-miller" element={<MillerCaseStudyPage />} />
+                    <Route path="/resources/ai-ethics" element={<AIEthicsPage />} />
                 </Routes>
 
                 <Footer />

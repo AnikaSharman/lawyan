@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { CardContainer, CardBody, CardItem } from '../components/ui/ThreeDCard';
 
 const AboutPage: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -112,22 +113,36 @@ const AboutPage: React.FC = () => {
 
                         <div className="grid md:grid-cols-3 gap-6">
                             {[
-                                { title: "Tailored Solutions", desc: "We understand the unique demands of large enterprises and government bodies. Our solutions are meticulously tailored to meet their specific needs.", delay: 0 },
-                                { title: "Expertise", desc: "Our team comprises some of the brightest minds in the AI and software development industry. We bring years of experience to the table.", delay: 0.1 },
-                                { title: "Innovation", desc: "We are continuously at the forefront of technological advancements, ensuring that our clients have access to the latest and most powerful AI tools.", delay: 0.2 }
+                                { title: "Tailored Solutions", desc: "We understand the unique demands of large enterprises and government bodies. Our solutions are explicitly tailored.", delay: 0 },
+                                { title: "Expertise", desc: "Our team comprises the brightest minds in AI and legal tech. We bring decades of domain experience to the table.", delay: 0.1 },
+                                { title: "Innovation", desc: "We are at the forefront of gen-AI. We ensure our clients have access to the most powerful LLMs safely.", delay: 0.2 }
                             ].map((item, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ delay: item.delay, duration: 0.5 }}
-                                    whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                                    className="bg-surface/50 backdrop-blur-sm p-10 rounded-[2rem] border border-black/5 hover:border-accent-primary/30 hover:shadow-2xl hover:shadow-accent-primary/10 transition-all duration-300 group"
-                                >
-                                    <h3 className="text-2xl font-serif mb-4 group-hover:text-accent-primary transition-colors">{item.title}</h3>
-                                    <p className="text-textMuted leading-relaxed">{item.desc}</p>
-                                </motion.div>
+                                <CardContainer key={i} className="inter-var w-full h-full" containerClassName="py-0">
+                                    <CardBody className="bg-surface/50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-8 border">
+                                        <CardItem
+                                            translateZ="50"
+                                            className="text-2xl font-serif mb-4 text-textMain"
+                                        >
+                                            {item.title}
+                                        </CardItem>
+                                        <CardItem
+                                            as="p"
+                                            translateZ="60"
+                                            className="text-textMuted text-sm max-w-sm mt-2 leading-relaxed"
+                                        >
+                                            {item.desc}
+                                        </CardItem>
+                                        <div className="flex justify-between items-center mt-8">
+                                            <CardItem
+                                                translateZ={20}
+                                                as="button"
+                                                className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                                            >
+                                                Learn more →
+                                            </CardItem>
+                                        </div>
+                                    </CardBody>
+                                </CardContainer>
                             ))}
                         </div>
                     </div>
