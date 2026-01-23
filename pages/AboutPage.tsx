@@ -61,9 +61,9 @@ const AboutPage: React.FC = () => {
                     <div className="relative w-full aspect-[21/9] rounded-[2.5rem] overflow-hidden mb-32 shadow-2xl border border-white/10 group">
                         <motion.div style={parallaxStyle} className="absolute inset-0">
                             <img
-                                src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+                                src="/images/lawyan_about_hero.png"
                                 className="w-full h-[120%] object-cover transform -translate-y-[10%]"
-                                alt="Kyaani Office Berlin"
+                                alt="Kyaani Legal AI Headquarters"
                             />
                         </motion.div>
                         <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-700" />
