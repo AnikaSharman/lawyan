@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { StickyScroll } from '../components/StickyScroll';
 import { InfiniteMovingCards } from '../components/InfiniteMovingCards';
 import { SpotlightCard } from '../components/SpotlightCard';
+import { LampContainer } from '../components/ui/LampEffect';
 
 const content = [
     {
@@ -55,15 +56,33 @@ const ProductsPage: React.FC = () => {
         <div className="pt-32 min-h-screen bg-bgMain text-textMain font-sans pb-20">
             <div className="max-w-7xl mx-auto px-6">
 
-                {/* Header */}
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-24">
-                    <h1 className="text-5xl md:text-7xl font-serif font-medium mb-8">
-                        A complete <span className="italic text-gray-500">operating system</span>
-                    </h1>
-                    <p className="text-xl text-textMuted max-w-2xl mx-auto">
+                {/* Cinematic Header with Lamp Effect */}
+                <LampContainer className="pt-20 -mt-32 mb-10">
+                    <motion.h1
+                        initial={{ opacity: 0.5, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                            delay: 0.3,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                        }}
+                        className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-serif font-medium tracking-tight text-transparent md:text-7xl"
+                    >
+                        A complete <br /> <span className="italic text-slate-400">operating system</span>
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{
+                            delay: 0.5,
+                            duration: 0.8,
+                            ease: "easeInOut",
+                        }}
+                        className="text-xl text-slate-400 max-w-2xl mx-auto text-center mt-4"
+                    >
                         Everything you need to run a modern legal practice, integrated into one seamless experience.
-                    </p>
-                </motion.div>
+                    </motion.p>
+                </LampContainer>
 
                 {/* Sticky Scroll Section */}
                 <div className="mb-40">

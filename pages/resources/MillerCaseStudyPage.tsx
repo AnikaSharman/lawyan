@@ -1,11 +1,15 @@
-import React from "react";
 import { TrendingUp, Clock, Users, CheckCircle, ArrowLeft } from 'lucide-react';
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { BackgroundGradientAnimation } from "../../components/ui/BackgroundGradient";
 
 const MillerCaseStudyPage = () => {
     return (
-        <div className="pt-32 pb-20 min-h-screen bg-bgMain text-textMain font-sans">
-            <div className="max-w-7xl mx-auto px-6">
+        <div className="relative pt-32 pb-20 min-h-screen bg-bgMain text-textMain font-sans overflow-hidden">
+            <div className="absolute inset-0 z-0 opacity-10">
+                <BackgroundGradientAnimation interactive={false} />
+            </div>
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="mb-8">
                     <Link to="/resources" className="inline-flex items-center text-slate-500 hover:text-blue-600 transition-colors">
                         <ArrowLeft className="w-4 h-4 mr-2" />

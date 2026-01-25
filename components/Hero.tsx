@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Play, Search, Bell, ChevronDown, Plus, ArrowRight } from 'lucide-react';
 import DashboardMockup from './DashboardMockup';
 
@@ -53,10 +54,12 @@ const Hero: React.FC = () => {
                     transition={{ delay: 0.3 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 >
-                    <button className="h-12 px-8 bg-textMain text-white text-base font-medium rounded-full hover:scale-105 transition-transform shadow-xl shadow-black/10 flex items-center gap-2">
-                        Get Started Free
-                        <ArrowRightIcon />
-                    </button>
+                    <Link to="/onboarding">
+                        <button className="h-12 px-8 bg-textMain text-white text-base font-medium rounded-full hover:scale-105 transition-transform shadow-xl shadow-black/10 flex items-center gap-2">
+                            Get Started Free
+                            <ArrowRightIcon />
+                        </button>
+                    </Link>
                     <button className="h-12 px-8 bg-white text-textMain border border-black/5 text-base font-medium rounded-full hover:bg-surface transition-colors flex items-center gap-2 shadow-sm">
                         <Play className="w-4 h-4 fill-textMain" />
                         Watch Demo

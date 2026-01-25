@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
 import { CardContainer, CardBody, CardItem } from '../components/ui/ThreeDCard';
+import { VanishText } from '../components/ui/VanishText';
+import { VideoBackground } from '../components/ui/VideoBackground';
 
 const AboutPage: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -31,12 +33,12 @@ const AboutPage: React.FC = () => {
 
     return (
         <div ref={containerRef} className="min-h-screen bg-bgMain text-textMain font-sans overflow-hidden">
-            {/* Ambient Background Gradient (Aurora Effect) */}
-            <div className="fixed inset-0 pointer-events-none z-0">
-                <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-purple-200/20 blur-[120px] rounded-full mix-blend-multiply animate-blob filter" />
-                <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[50%] bg-blue-200/20 blur-[120px] rounded-full mix-blend-multiply animate-blob animation-delay-2000 filter" />
-                <div className="absolute bottom-[-20%] left-[20%] w-[50%] h-[50%] bg-pink-200/20 blur-[120px] rounded-full mix-blend-multiply animate-blob animation-delay-4000 filter" />
-            </div>
+            {/* Cinematic Video Background */}
+            <VideoBackground
+                src="https://assets.mixkit.co/videos/preview/mixkit-abstract-motion-of-white-particles-2023-large.mp4"
+                opacity={0.3}
+                overlayClassName="bg-white/70"
+            />
 
             <div className="relative z-10 pt-32 pb-20">
                 <div className="max-w-7xl mx-auto px-6">
@@ -48,7 +50,7 @@ const AboutPage: React.FC = () => {
                         className="max-w-4xl mb-24"
                     >
                         <motion.h1 variants={fadeInUp} className="text-6xl md:text-8xl font-serif font-medium mb-8 leading-[1.1] text-textMain tracking-tight">
-                            About <span className="italic text-gray-500">Kyaani</span>
+                            <VanishText text="About Kyaani" className="block" />
                         </motion.h1>
                         <motion.p variants={fadeInUp} className="text-2xl text-textMuted mb-8 leading-relaxed font-light">
                             At Kyaani, we are pioneering the future of AI-driven solutions, proudly headquartered in the vibrant tech hub of Berlin, Germany.

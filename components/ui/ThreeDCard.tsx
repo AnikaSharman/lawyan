@@ -17,10 +17,12 @@ export const CardContainer = ({
     children,
     className,
     containerClassName,
+    ...props
 }: {
     children?: React.ReactNode;
     className?: string;
     containerClassName?: string;
+    [key: string]: any;
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [isMouseEntered, setIsMouseEntered] = useState(false);
